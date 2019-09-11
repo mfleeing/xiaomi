@@ -9,7 +9,7 @@
      <li>消息通知</li>
      <li class="shopping"  @mouseenter="flag=true"  @mouseleave="flag=false" :class="flag==true?'show':''">购物车</li>
       <ul class="shopping-mb" v-if="flag">
-      sfsb
+     shopping-mb
      </ul>
     </ul>
     </header>
@@ -18,7 +18,7 @@
       <ul class="count-nav">
          <img src="https://s02.mifile.cn/assets/static/image/mi-logo.png" alt=""  style="width:46px;height:46px;background: orangered;padding:3px;">
             <ul class="nav-list">
-                <li   v-for="(item,index) in items" :key='index' @mouseenter="isshow=true" @mouseleave="isshow=false"  >{{item.title}}</li>
+                <li   v-for="(item,index) in items" :key='index' @mouseenter="isshow=true" @mouseleave="isshow=false">{{item.title}}</li>
              </ul>
              <ul>
               <input type="text" style="height:48px;width:250px">
@@ -35,13 +35,14 @@
         </div>
         <!-- 第二个列表蒙版 -->
         <ul class="nav-list-mb"  v-if="isshow">
+          22222222222
          </ul>
 
          <div style="width:100%; display: flex;justify-content: space-between; position: relative;">
             <ul class="list-three">
-                <li   v-for="(item,index) in s" :key='index'  @click="flag2=!flag2"  >{{item.nr}}<span>></span></li>
+                <li   v-for="(item,index) in s" :key='index'  @mouseenter="flag2=index" @mouseleave="flag2='hidden'" >{{item.nr}}<span>></span></li>
              </ul>
-         <ul class="flag2-mb"  v-if="flag2">
+         <ul class="flag2-mb"  v-if="flag2==index">
            11111111111111111111111111111111111111111111111111
          </ul>
          </div>
@@ -59,7 +60,7 @@
              
              <div style="width:100%;">
                   <p style="font-size:22px;">小米闪购</p>
-                   <div style="display: flex;justify-content: space-between">
+                   <div style="display: flex;justify-content: space-between" class="qg">
                      <ul class='ul'>
                       <h3 style="color:red; text-align:center;margin:50px 0px">00:00场</h3>
                       <img src="../assets/1.png" alt="" style="margin:0px 110px">
@@ -81,7 +82,7 @@
                         <ul style="width:295px">
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/79ed6663b57e30554a5d1f0653c68b78.jpg?thumb=1&w=293&h=768&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title">{{img.title}}</p>
@@ -97,7 +98,7 @@
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b56fd90a60e3d9e5d87dae9fbd427ea8.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b67de5a8ce9025fb5d8bac66e019d1c3.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs2" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title" style="font-size:14px">{{img.title}}</p>
@@ -113,7 +114,7 @@
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/45c23f5b9a927b2dc49c25277e07727c.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a660ce095e8f553a9ed1515265f4e9fc.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs2" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title" style="font-size:14px">{{img.title}}</p>
@@ -129,7 +130,7 @@
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6874615b3c50e837ffe532eb6ea4ef1a.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e4e456617d58227cc70d682b42fe90e3.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs2" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title" style="font-size:14px">{{img.title}}</p>
@@ -145,7 +146,7 @@
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/739ebd8abfc2b1be8866a2c1ad87e709.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ffe4182f1d9a5befdf2380ec90ae1620.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs2" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title" style="font-size:14px">{{img.title}}</p>
@@ -156,12 +157,12 @@
                          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/10fb0086cb21120c53248a3d8cc56dc5.jpg?thumb=1&w=1533&h=150&f=webp&q=90" alt="" style="width:100%;margin:30px 0px">
                       </div>
                           <p style="font-size:22px;margin-bottom:20px">周边</p>
-                      <div style=" display: flex;  justify-content: space-between; flex-wrap: wrap">
+                      <div style=" display: flex;  justify-content: space-between; flex-wrap: wrap" >
                         <ul style="width:295px;">
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/99f1f43d9df484572bd81138f45dfc0f.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e0b8cffcbdaa88e2a314f0a372ca75dd.jpg?thumb=1&w=293&h=375&f=webp&q=90" alt="" >
                          </ul>
-                         <ul style="width:960px;display: flex; flex-wrap: wrap">
+                         <ul style="width:960px;display: flex; flex-wrap: wrap" class="shiping">
                                  <ul  style="width:220px;height:360px;border:1px red solid;margin-left:18px;" v-for="img in imgs2" :key='img'   >
                                      <img :src="img.url" alt="" style="width:220px">
                                      <p class="title" style="font-size:14px">{{img.title}}</p>
@@ -172,7 +173,7 @@
                          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/88e35cffc82cd98cd53172460067af17.jpg?thumb=1&w=1533&h=150&f=webp&q=90" alt="" style="width:100%;margin:30px 0px">
                       </div>
                         <p style="font-size:22px;margin-bottom:20px">视频</p>
-                        <div style=" display: flex;justify-content: space-between">
+                        <div style=" display: flex;justify-content: space-between" class="shiping">
                                 <ul style="width:300px;height:260px;border:1px red solid"  v-for="s in 4" :key="s">
                                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3a134c9f8fffb85a47ac397e7eeba7e8.jpg?thumb=1&w=370&h=225&f=webp&q=90" alt="" style="width:300px">
                                     <p style="text-align:center;margin-top:25px;font-size:18px"> Redmi Note 8 系列发布会 </p>
@@ -278,7 +279,7 @@ export default {
     return {
      flag:false,
      isshow:false,
-     flag2:false,
+     flag2:'hidden',
       n: 0,
       img:[
             
@@ -395,6 +396,10 @@ header{
   cursor: pointer;
 
 }
+.nav li:hover{
+color:orangered;
+
+}
  .Select{
   border: none;
  }
@@ -410,7 +415,7 @@ header{
 .shopping-mb{
   width: 350px;
   height: 100px;
-  background: black;
+  background: rgb(209, 157, 157);
   position: absolute;
   right: 0px;
   z-index: 33;
@@ -441,6 +446,9 @@ header{
   padding: 10px;
   cursor: pointer;
 }
+.nav-list li:hover{
+  color: blue
+}
 .nav-list-mb{
   width:1270px;
   height: 200px;
@@ -455,7 +463,7 @@ header{
   width:250px;
   height:460px;
   background: rgb(168, 160, 160);
-  opacity: 0.6;
+  opacity: 0.8;
   z-index: 4;
 
 }
@@ -588,8 +596,13 @@ text-align: center;
   line-height: 40px;;
   border-right: 1px red solid;
   text-align: center;
-
-
+}
+.foot-nav li:hover{
+color: blue;
+cursor: pointer;
+}
+.list-three li:hover{
+  background: orangered;
 }
 .foot{
   width:1040px;
@@ -618,6 +631,14 @@ flex-wrap: wrap;
   font-size: 14px;
   padding: 3px 10px;
   border-right: 1px red solid;
+}
+.shiping ul:hover{
+  color: blue;
+  cursor: pointer;
+}
+.qg ul+ul:hover{
+  color: blue;
+  cursor: pointer;
 }
 
  
